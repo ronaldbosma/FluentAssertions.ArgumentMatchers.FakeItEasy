@@ -29,6 +29,8 @@ steps:
     command: build
     projects: 'tests/**/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
+    feedsToUse: config
+    nugetConfigPath: 'tests/NuGet.config'
 
 - task: DotNetCoreCLI@2
   displayName: 'Run Tests'
