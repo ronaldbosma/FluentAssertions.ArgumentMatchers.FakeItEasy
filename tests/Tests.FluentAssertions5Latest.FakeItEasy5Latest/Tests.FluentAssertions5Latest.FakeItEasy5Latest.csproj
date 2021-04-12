@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions.ArgumentMatchers.FakeItEasy" Version="*-*" />
+    <PackageReference Include="FluentAssertions" Version="5.*" />
+    <PackageReference Include="FakeItEasy" Version="5.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
+    <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="AutoFixture" Version="4.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\FluentAssertions.ArgumentMatchers.FakeItEasy.Tests\TestTools\AssemblySetup.cs" Link="TestTools\AssemblySetup.cs" />
+    <Compile Include="..\..\src\FluentAssertions.ArgumentMatchers.FakeItEasy.Tests\TestTools\ComplexType.cs" Link="TestTools\ComplexType.cs" />
+    <Compile Include="..\..\src\FluentAssertions.ArgumentMatchers.FakeItEasy.Tests\TestTools\IInterface.cs" Link="TestTools\IInterface.cs" />
+    <Compile Include="..\..\src\FluentAssertions.ArgumentMatchers.FakeItEasy.Tests\ArgumentConstraintManagerExtensionsTests.cs" Link="ArgumentConstraintManagerExtensionsTests.cs" />
+  </ItemGroup>
+
+</Project>
