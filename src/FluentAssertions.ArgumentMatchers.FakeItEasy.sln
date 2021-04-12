@@ -3,14 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAssertions.ArgumentMatchers.FakeItEasy", "FluentAssertions.ArgumentMatchers.FakeItEasy\FluentAssertions.ArgumentMatchers.FakeItEasy.csproj", "{F9BB860D-DEA1-4880-8461-A312DE4AA07E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentAssertions.ArgumentMatchers.FakeItEasy", "FluentAssertions.ArgumentMatchers.FakeItEasy\FluentAssertions.ArgumentMatchers.FakeItEasy.csproj", "{222A709F-BE48-467B-A2E1-DD78CA5280AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{848F0A88-AA69-4C6B-9F21-56416A5F2625}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAssertions.ArgumentMatchers.FakeItEasy.Tests", "FluentAssertions.ArgumentMatchers.FakeItEasy.Tests\FluentAssertions.ArgumentMatchers.FakeItEasy.Tests.csproj", "{17ED1906-A3B6-4ADB-B611-5C5983B62866}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentAssertions.ArgumentMatchers.FakeItEasy.Tests", "FluentAssertions.ArgumentMatchers.FakeItEasy.Tests\FluentAssertions.ArgumentMatchers.FakeItEasy.Tests.csproj", "{35A76B9C-A62E-4008-8719-6637D22BA664}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,14 +19,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F9BB860D-DEA1-4880-8461-A312DE4AA07E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9BB860D-DEA1-4880-8461-A312DE4AA07E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9BB860D-DEA1-4880-8461-A312DE4AA07E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9BB860D-DEA1-4880-8461-A312DE4AA07E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17ED1906-A3B6-4ADB-B611-5C5983B62866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17ED1906-A3B6-4ADB-B611-5C5983B62866}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17ED1906-A3B6-4ADB-B611-5C5983B62866}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17ED1906-A3B6-4ADB-B611-5C5983B62866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{222A709F-BE48-467B-A2E1-DD78CA5280AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{222A709F-BE48-467B-A2E1-DD78CA5280AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{222A709F-BE48-467B-A2E1-DD78CA5280AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{222A709F-BE48-467B-A2E1-DD78CA5280AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A76B9C-A62E-4008-8719-6637D22BA664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A76B9C-A62E-4008-8719-6637D22BA664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A76B9C-A62E-4008-8719-6637D22BA664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A76B9C-A62E-4008-8719-6637D22BA664}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
