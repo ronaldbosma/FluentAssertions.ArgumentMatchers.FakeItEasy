@@ -36,10 +36,3 @@ steps:
     command: test
     projects: 'tests/**/*.csproj'
     arguments: '--no-restore'
-
-- task: PublishTestResults@2
-  displayName: 'Publish Test Results'
-  inputs:
-    testResultsFormat: 'VSTest'
-    testResultsFiles: '**/*.trx'
-    failTaskOnFailedTests: true
