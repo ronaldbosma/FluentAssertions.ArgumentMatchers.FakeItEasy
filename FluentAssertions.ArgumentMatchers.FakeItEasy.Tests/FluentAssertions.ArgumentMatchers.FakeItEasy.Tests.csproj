@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <ProjectGuid>35A76B9C-A62E-4008-8719-6637D22BA664</ProjectGuid>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -11,6 +11,13 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.0" />
     <PackageReference Include="coverlet.collector" Version="1.2.0" />
+    <PackageReference Include="FluentAssertions" Version="5.1.1" />
+    <PackageReference Include="FakeItEasy" Version="7.0.0" />
+    <PackageReference Include="AutoFixture" Version="4.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FluentAssertions.ArgumentMatchers.FakeItEasy\FluentAssertions.ArgumentMatchers.FakeItEasy.csproj" />
   </ItemGroup>
 
 </Project>
