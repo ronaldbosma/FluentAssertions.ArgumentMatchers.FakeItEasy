@@ -25,7 +25,7 @@ namespace FluentAssertions.ArgumentMatchers.FakeItEasy.Tests.TestTools
             var assemblyName = assembly.GetName();
             var assemblyFileVersionInfo = FileVersionInfo.GetVersionInfo(assembly.Location);
 
-            Trace.WriteLine($"{assemblyName.Name} - {assemblyName.Version} - {assemblyFileVersionInfo.FileVersion}");
+            Trace.WriteLine($"{assemblyName.Name} - {assemblyName.Version} - {assemblyFileVersionInfo.FileVersion} - {assemblyFileVersionInfo.ProductVersion}");
         }
     }
 }
