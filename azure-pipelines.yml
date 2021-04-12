@@ -4,7 +4,13 @@
 # https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema
 
 trigger:
-- master
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - README.md
+    - tests/*
 
 stages:
 
