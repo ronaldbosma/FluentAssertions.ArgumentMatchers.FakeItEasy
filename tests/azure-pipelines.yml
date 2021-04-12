@@ -28,13 +28,9 @@ steps:
   inputs:
     command: build
     projects: 'tests/**/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
-    feedsToUse: config
-    nugetConfigPath: 'tests/NuGet.config'
 
 - task: DotNetCoreCLI@2
   displayName: 'Run Tests'
   inputs:
     command: test
     projects: 'tests/**/*.csproj'
-    arguments: '--configuration $(buildConfiguration) --logger trx'
