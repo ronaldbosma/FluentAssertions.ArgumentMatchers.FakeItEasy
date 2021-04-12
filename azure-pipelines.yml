@@ -33,7 +33,7 @@ stages:
       displayName: "NuGet Restore"
       inputs:
         command: restore
-        projects: '**/*.csproj'
+        projects: 'src/**/*.csproj'
     
     - task: SonarQubePrepare@4
       enabled: false
@@ -52,14 +52,14 @@ stages:
       displayName: "Build Solution"
       inputs:
         command: build
-        projects: '**/*.csproj'
+        projects: 'src/**/*.csproj'
         arguments: '--configuration $(buildConfiguration)'
 
     - task: DotNetCoreCLI@2
       displayName: 'Run Tests'
       inputs:
         command: test
-        projects: '**/*[Tt]ests/*.csproj'
+        projects: 'src/**/*[Tt]ests/*.csproj'
         arguments: '--configuration $(buildConfiguration) --logger trx /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput="$(Build.SourcesDirectory)/TestResults/Coverage"'
     
     - task: SonarQubeAnalyze@4
