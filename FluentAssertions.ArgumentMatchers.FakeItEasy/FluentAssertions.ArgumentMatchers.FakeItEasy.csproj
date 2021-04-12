@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ProjectGuid>222A709F-BE48-467B-A2E1-DD78CA5280AC</ProjectGuid>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>FluentAssertions.ArgumentMatchers.FakeItEasy.snk</AssemblyOriginatorKeyFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>FluentAssertions.ArgumentMatchers.FakeItEasy</PackageId>
+    <Description>Contains FakeItEasy argument matchers using FluentAssertions</Description>
+    <Authors>Ronald Bosma</Authors>
+    <PackageTags>netstandard;netcore;FakeItEasy;FluentAssertions;mocking;mocks;unittesting;unittest;TDD</PackageTags>
+    <PackageProjectUrl>https://github.com/ronaldbosma/FluentAssertions.ArgumentMatchers.FakeItEasy</PackageProjectUrl>
+    <PackageReleaseNotes>https://github.com/ronaldbosma/FluentAssertions.ArgumentMatchers.FakeItEasy/releases</PackageReleaseNotes>
+    <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/ronaldbosma/FluentAssertions.ArgumentMatchers.FakeItEasy</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+</Project>
