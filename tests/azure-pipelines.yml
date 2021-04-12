@@ -35,3 +35,4 @@ steps:
   inputs:
     command: test
     projects: 'tests/**/*.csproj'
+    arguments: '--no-restore'
