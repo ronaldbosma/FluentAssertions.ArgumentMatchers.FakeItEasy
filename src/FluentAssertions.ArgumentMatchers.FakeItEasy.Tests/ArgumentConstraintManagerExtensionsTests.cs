@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using AutoFixture;
 using FakeItEasy;
 using FluentAssertions.ArgumentMatchers.FakeItEasy.Tests.TestTools;
@@ -7,10 +6,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FluentAssertions.ArgumentMatchers.FakeItEasy.Tests
 {
-    /// <summary>
-    /// This <see cref="ArgumentConstraintManagerExtensionsTests"/>, <seealso cref="ComplexType"/> and <seealso cref="IInterface"/>
-    /// are reused by the test solution in the tests folder.
-    /// </summary>
     [TestClass]
     public class ArgumentConstraintManagerExtensionsTests
     {
@@ -22,10 +17,6 @@ namespace FluentAssertions.ArgumentMatchers.FakeItEasy.Tests
         {
             _fixture = new Fixture();
             _fake = A.Fake<IInterface>();
-
-            // Print the FakeItEasy and FluentAssertions assembly version so we can check what version is used.
-            Trace.WriteLine($"{typeof(Fake).AssemblyQualifiedName}");
-            Trace.WriteLine($"{typeof(FluentAssertions.TypeExtensions).AssemblyQualifiedName}");
         }
 
         [TestMethod]
