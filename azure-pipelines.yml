@@ -10,7 +10,6 @@ trigger:
   paths:
     exclude:
     - README.md
-    - tests/*
 
 stages:
 
@@ -32,7 +31,7 @@ stages:
       displayName: 'Use .NET Core sdk'
       inputs:
         packageType: sdk
-        version: 3.1.x
+        version: 8.0.x
         installationPath: $(Agent.ToolsDirectory)/dotnet
     
     - task: DotNetCoreCLI@2
@@ -97,7 +96,7 @@ stages:
 - stage: 'PublishPrereleaseNuGetPackage'
   displayName: 'Publish Prerelease NuGet Package'
   dependsOn: 'Build'
-  condition: succeeded()
+  condition: and(succeeded(), ne(variables['Build.SourceBranch'], 'refs/heads/master'))
   jobs:
   - job:
     pool:
@@ -121,21 +120,69 @@ stages:
         
 - stage: 'PublishReleaseNuGetPackage'
   displayName: 'Publish Release NuGet Package'
-  dependsOn: 'PublishPrereleaseNuGetPackage'
-  condition: succeeded()
+  dependsOn: 'Build'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   jobs:
-  - deployment:
+  - job:
     pool:
       vmImage: 'ubuntu-latest'
-    environment: 'nuget-org'
-    strategy:
-     runOnce:
-       deploy:
-         steps:
-         - task: NuGetCommand@2
-           displayName: 'Push NuGet Package'
-           inputs:
-             command: 'push'
-             packagesToPush: '$(Pipeline.Workspace)/packages/releases/*.nupkg'
-             nuGetFeedType: 'external'
-             publishFeedCredentials: 'NuGet'
+
+    steps:
+    - checkout: none
+
+    - download: current
+      artifact: 'packages'
+
+    - task: NuGetCommand@2
+      displayName: 'Push NuGet Package'
+      inputs:
+        command: 'push'
+        packagesToPush: '$(Pipeline.Workspace)/packages/releases/*.nupkg'
+        nuGetFeedType: 'external'
+        publishFeedCredentials: 'NuGet'
+
+
+
+- stage: 'TestPublishedPackage'
+  displayName: 'Test Published Package with Dependencies'
+  dependsOn:
+  - PublishPrereleaseNuGetPackage
+  - PublishReleaseNuGetPackage
+  condition: or(succeeded('PublishPrereleaseNuGetPackage'), succeeded('PublishReleaseNuGetPackage'))
+  jobs:
+  - job:
+    pool:
+      vmImage: 'ubuntu-latest'
+
+    workspace:
+      clean: all
+
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Use .NET Core sdk'
+      inputs:
+        packageType: sdk
+        version: 8.0.x
+        installationPath: $(Agent.ToolsDirectory)/dotnet
+
+    - task: DotNetCoreCLI@2
+      displayName: "NuGet Restore"
+      inputs:
+        command: restore
+        projects: 'tests/**/*.csproj'
+        feedsToUse: config
+        nugetConfigPath: 'tests/NuGet.config'
+
+    - task: DotNetCoreCLI@2
+      displayName: "Build Solution"
+      inputs:
+        command: build
+        projects: 'tests/**/*.csproj'
+        arguments: '--no-restore'
+
+    - task: DotNetCoreCLI@2
+      displayName: 'Run Tests'
+      inputs:
+        command: test
+        projects: 'tests/**/*.csproj'
+        arguments: '--no-restore'
