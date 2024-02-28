@@ -3,7 +3,7 @@
   <PropertyGroup>
     <ProjectGuid>222A709F-BE48-467B-A2E1-DD78CA5280AC</ProjectGuid>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionPrefix>1.0.0</VersionPrefix>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>FluentAssertions.ArgumentMatchers.FakeItEasy.snk</AssemblyOriginatorKeyFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
